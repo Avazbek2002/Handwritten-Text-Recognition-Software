@@ -1,7 +1,7 @@
 import random
 import cv2
 import numpy as np
-
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 from SamplePreprocessor import preprocess
 
 
@@ -53,7 +53,7 @@ class DataLoaderIAM:
 
             # GT text are columns starting at 9
             gtText = self.truncateLabel(' '.join(lineSplit[8:]), maxTextLen)
-            chars = chars.union(set(list(gtText)))
+            #chars = chars.union(set(list(gtText)))
 
             # put sample into list
             self.samples.append(Sample(gtText, img_processed))
@@ -65,8 +65,12 @@ class DataLoaderIAM:
         #self.Set()
 
         # list of all chars in dataset. Overall charList contains 79 characters (it doesn't include blank symbol)
-        self.charList = sorted(list(chars))
-        self.charList.insert(0, " ")
+        #self.charList = sorted(list(chars))
+        char_list = " !\"#&'()*+,-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+        self.charList = []
+        for i in char_list:
+            self.charList.append(i)
+        #self.charList.insert(0, " ")
 
 
 
@@ -103,5 +107,8 @@ class DataLoaderIAM:
         for i in range(len(texts)):
             for j in range(len(texts[i])):
                 label[i][j] = encoded_words[i][j]
-
-        return label
+        padded_label = pad_sequences(label,
+                                           maxlen=32,
+                                           padding='post',
+                                           value=len(self.charList))
+        return padded_label
