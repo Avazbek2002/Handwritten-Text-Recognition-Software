@@ -17,4 +17,4 @@ The ***output*** is in the form of a ***string***.
 ***The detailed explanation of every layers are in my Project Documentation***
 
 ## References
-Scheidl, Harald. “Build a Handwritten Text Recognition System Using TensorFlow.” Medium, 9 Aug. 2020, [link to the website] (https://www.towardsdatascience.com/build-a-handwritten-text-recognition-system-using-tensorflow-2326a3487cd5.)
+Scheidl, Harald. “Build a Handwritten Text Recognition System Using TensorFlow.” Medium, 9 Aug. 2020, [link to the website](https://towardsdatascience.com/build-a-handwritten-text-recognition-system-using-tensorflow-2326a3487cd5)
