@@ -15,7 +15,7 @@ The ***output*** is in the form of a ***string***.
 > - CTC loss and CTC decode function
 
 ***The detailed explanation of every layers are in my Project Documentation***
-[Link to the documentation](file:///C:/Users/avazb/Desktop/Handwritten%20text%20classification%20software.pdf)
+<embed src="file:///C:/Users/avazb/Desktop/Handwritten%20text%20classification%20software.pdf" type="application/pdf">
 
 ## References
 Scheidl, Harald. “Build a Handwritten Text Recognition System Using TensorFlow.” Medium, 9 Aug. 2020, [link to the website](https://towardsdatascience.com/build-a-handwritten-text-recognition-system-using-tensorflow-2326a3487cd5)
